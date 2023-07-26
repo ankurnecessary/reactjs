@@ -32,9 +32,13 @@ const App = () => {
     },
   ];
 
+  const expenseSubmitHandler = (expense) => {
+    console.log(expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onExpenseSubmit={expenseSubmitHandler} />
       <Expenses items={expenses} />
     </div>
   );
