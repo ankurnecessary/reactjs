@@ -13,10 +13,22 @@ const Expenses = (props) => {
         console.log("Expenses.js: ", year);
     }
 
+    let filterInfoText = "2019, 2021 and 2022";
+    if (selectedYear === '2019') {
+        filterInfoText = "2020, 2021 and 2022";
+    }
+    else if (selectedYear === '2021') {
+        filterInfoText = "2019, 2020 and 2022";
+    }
+    else {
+        filterInfoText = "2019, 2020 and 2021";
+    }
+
     return (
         <div>
             <Card className="expenses">
                 <ExpensesFilter yearSelected={selectedYear} onYearChange={yearChangeHandler} />
+                {filterInfoText}
                 <ExpenseItem
                     title={props.items[0].title}
                     amount={props.items[0].amount}
