@@ -3,7 +3,7 @@ import React from "./react";
 import "./Chart.css"
 
 const Chart = (props) => {
-    return <div class="chart">
+    return <div className="chart">
         {props.dataPoints.map((dataPoint) => (
             <ChartBar
                 key={dataPoint.label}
