@@ -52,7 +52,7 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl invalid={!isValid}>
+      <FormControl invalid={!isValid ? 1 : 0}>
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </FormControl>
