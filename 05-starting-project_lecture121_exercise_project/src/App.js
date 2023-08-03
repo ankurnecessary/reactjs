@@ -4,6 +4,7 @@ import './App.css';
 import UserForm from './components/UserForm/UserForm';
 import UserList from './components/UserList/UserList';
 import ValidationOverlay from './components/ValidationOverlay/ValidationOverlay';
+import Wrapper from './components/helper/Wrapper';
 
 function App() {
     const [validation, setValidation] = useState({ valid: true, message: '' });
@@ -22,7 +23,7 @@ function App() {
     }
 
     return (
-        <div>
+        <Wrapper>
 
             <UserForm onSubmit={userFormSubmitHandler} onValidityCheck={validityCheckHandler} />
 
@@ -30,7 +31,7 @@ function App() {
 
             {!validation.valid && <ValidationOverlay message={validation.message} onValidationReset={resetValidation} />}
 
-        </div>
+        </Wrapper>
     );
 }
 
