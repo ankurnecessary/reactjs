@@ -1,0 +1,25 @@
+
+.form {
+  padding: 20px;
+}
+
+.form > div {
+  margin-bottom: 10px;
+}
+
+.form > div:last-child {
+  margin-bottom: 0;
+}
+
+.form label {
+  font-weight: bold;
+}
+
+.form input {
+  font: inherit;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,7 @@
+/* common wrapper */
+.wrapper{
+  background-color: #fff;
+  border-radius: .5rem;
+  width: 576px;
+  margin: 40px auto;
+}
