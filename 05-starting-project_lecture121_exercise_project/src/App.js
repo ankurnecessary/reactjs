@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 import './App.css';
 import UserForm from './components/UserForm/UserForm';
 import UserList from './components/UserList/UserList';
 import ValidationOverlay from './components/ValidationOverlay/ValidationOverlay';
-import Wrapper from './components/helper/Wrapper';
 
 function App() {
     const [validation, setValidation] = useState({ valid: true, message: '' });
@@ -23,7 +22,7 @@ function App() {
     }
 
     return (
-        <Wrapper>
+        <React.Fragment>
 
             <UserForm onSubmit={userFormSubmitHandler} onValidityCheck={validityCheckHandler} />
 
@@ -31,8 +30,35 @@ function App() {
 
             {!validation.valid && <ValidationOverlay message={validation.message} onValidationReset={resetValidation} />}
 
-        </Wrapper>
+        </React.Fragment>
     );
+
+    // Other 2 ways of using fragments
+    // Way 1
+    /*return (
+        <Fragment>
+
+            <UserForm onSubmit={userFormSubmitHandler} onValidityCheck={validityCheckHandler} />
+
+            {(users.length > 0) && <UserList users={users} />}
+
+            {!validation.valid && <ValidationOverlay message={validation.message} onValidationReset={resetValidation} />}
+
+        </Fragment>
+    );*/
+
+    // Way 2
+    /*return (
+        <>
+
+            <UserForm onSubmit={userFormSubmitHandler} onValidityCheck={validityCheckHandler} />
+
+            {(users.length > 0) && <UserList users={users} />}
+
+            {!validation.valid && <ValidationOverlay message={validation.message} onValidationReset={resetValidation} />}
+
+        </>
+    );*/
 }
 
 export default App;
