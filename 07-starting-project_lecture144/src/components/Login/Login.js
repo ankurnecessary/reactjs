@@ -12,15 +12,24 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
+    console.log('Effect running');
+
+    return () => {
+      console.log('Effect cleanup');
+    }
+
+  }, [enteredEmail]);
+
+  useEffect(() => {
     const validationTimeout = setTimeout(() => {
-      console.log('Validating username and password');
+      // console.log('Validating username and password');
       setFormIsValid(
         enteredEmail.includes('@') && enteredPassword.trim().length > 6
       );
     }, 500);
 
     return () => {
-      console.log('Reset validation timer');
+      // console.log('Reset validation timer');
       clearTimeout(validationTimeout);
     }
   }, [enteredEmail, enteredPassword]);
