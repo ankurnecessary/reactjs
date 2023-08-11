@@ -7,6 +7,7 @@ Learning react
 3. const [state, stateFn] = useState(). Can we pass stateFn to other components on eventHandlers?
 4. Create 2 components visible on a page on the screen. Now use same CONTEXT on both of them and check if we update it from one component does it update the value in second component.
 5. Browser show some kind of lines in react app when we interact with the app. How could we disable those lines?
+6. If component name is **a.js** then is it necessary to name a css file **a.module.css** and can't we use **b.module.css**?
 
 ## Insights
 1. We use useRef() when we just want to read the user input and don't want to manipulate it programatically.
