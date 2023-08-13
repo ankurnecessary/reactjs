@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 
 import './App.css';
 import DemoList from './components/Demo/DemoList';
@@ -8,12 +8,14 @@ function App() {
   const [listTitle, setListTitle] = useState('My List');
 
   const changeTitleHandler = useCallback(() => {
-    setListTitle('New Title');
+    setListTitle('My List');
   }, []);
+
+  const myItems = useMemo(() => [5, 3, 1, 10, 9], []);
 
   return (
     <div className='app'>
-      <DemoList title={listTitle} items={[5, 3, 1, 10, 9]} />
+      <DemoList title={listTitle} items={myItems} />
       <Button onClick={changeTitleHandler}>Change List Title</Button>
     </div>
   );
