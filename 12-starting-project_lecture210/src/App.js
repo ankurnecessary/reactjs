@@ -6,21 +6,48 @@ import './App.css';
 function App() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchMoviesHandler = async () => {
+
+    setError(null);
     setIsLoading(true);
-    const response = await fetch('https://swapi.dev/api/films');
-    const data = await response.json();
-    const transformedMovies = data.results.map(({ episode_id, title, release_date, opening_crawl }) => {
-      return {
-        id: episode_id,
-        title,
-        releaseDate: release_date,
-        openingText: opening_crawl
-      };
-    })
-    setMovies(transformedMovies);
+
+    try {
+      const response = await fetch('https://swapi.dev/api/films');
+      if (!response.ok) { // Error check should be done after fetch call
+        throw new Error("Something went wrong!");
+      }
+      const data = await response.json();
+      const transformedMovies = data.results.map(({ episode_id, title, release_date, opening_crawl }) => {
+        return {
+          id: episode_id,
+          title,
+          releaseDate: release_date,
+          openingText: opening_crawl
+        };
+      })
+      setMovies(transformedMovies);
+    }
+    catch (error) {
+      setError(error.message);
+    }
+
     setIsLoading(false);
+  }
+
+  let content = <p>Found no movies!</p>;
+
+  if (movies.length > 0) {
+    content = <MoviesList movies={movies} />;
+  }
+
+  if (error) {
+    content = <p>{error}</p>;
+  }
+
+  if (isLoading) {
+    content = <p>Loading...</p>
   }
 
   return (
@@ -29,9 +56,7 @@ function App() {
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
       <section>
-        {isLoading && <p>Loading...</p>}
-        {!isLoading && movies.length === 0 && <p>Found no movies!</p>}
-        {!isLoading && movies.length > 0 && <MoviesList movies={movies} />}
+        {content}
       </section>
     </React.Fragment>
   );
