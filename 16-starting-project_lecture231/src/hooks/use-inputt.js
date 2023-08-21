@@ -21,7 +21,6 @@ const useInputt = (fieldValidator) => {
 
   return {
     value,
-    isTouched,
     isValid,
     hasError,
     valueChangeHandler,

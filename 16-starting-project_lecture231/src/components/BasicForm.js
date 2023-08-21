@@ -1,33 +1,32 @@
 import useInputt from '../hooks/use-inputt';
 
+const isNotEmpty = (value) => { value !== '' };
+
 const BasicForm = () => {
 
   // For firstName field
   const {
     value: firstName,
-    isTouched: firstNameIsTouched,
     isValid: firstNameIsValid,
     hasError: firstNameHasError,
     valueChangeHandler: firstNameChangeHandler,
     valueBlurHandler: firstNameBlurHandler,
     reset: firstNameReset
-  } = useInputt(value => value !== '');
+  } = useInputt(isNotEmpty);
 
   // For lastName field
   const {
     value: lastName,
-    isTouched: lastNameIsTouched,
     isValid: lastNameIsValid,
     hasError: lastNameHasError,
     valueChangeHandler: lastNameChangeHandler,
     valueBlurHandler: lastNameBlurHandler,
     reset: lastNameReset
-  } = useInputt(value => value !== '');
+  } = useInputt(isNotEmpty);
 
   // For email field
   const {
     value: email,
-    isTouched: emailIsTouched,
     isValid: emailIsValid,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
@@ -43,6 +42,10 @@ const BasicForm = () => {
   const formSubmitHandler = (event) => {
 
     event.preventDefault();
+
+    if (!isFormValid) {
+      return;
+    }
 
     console.log("firstName: ", firstName);
     console.log("lastName: ", lastName);
