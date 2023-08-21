@@ -1,6 +1,6 @@
 import useInputt from '../hooks/use-inputt';
 
-const isNotEmpty = (value) => { value !== '' };
+const isNotEmpty = value => value !== '';
 
 const BasicForm = () => {
 
