@@ -1,3 +1,8 @@
+.mealsLoading {
+  text-align: center;
+  color: #fff;
+}
+
 .meals {
   max-width: 60rem;
   width: 90%;
@@ -9,6 +14,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.meals-error {
+  text-align: center;
+  color: red;
 }
 
 @keyframes meals-appear {
