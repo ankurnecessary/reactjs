@@ -25,6 +25,11 @@ const counterReducer = (state = initialState, action) => {
   }
 
   if (action.type === 'toggle') {
+    /*
+    XXX This is a very bad practice XXX
+    state.showCounter = !state.showCounter;
+    return state;
+    */
     return {
       ...state
       , showCounter: !state.showCounter
