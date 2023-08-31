@@ -26,7 +26,13 @@ function App() {
       return;
     }
 
-    dispatch(sendCartData(cart));
+    if (cart.changed) {
+      dispatch(sendCartData({
+        items: cart.items
+        , totalQuantity: cart.totalQuantity
+      }));
+    }
+
   }, [cart, dispatch]);
 
   return (
