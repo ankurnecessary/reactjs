@@ -18,6 +18,7 @@ Learning react
 3. But if we have more than one kind of values interrelated to each other then we use useReducer(). We use objects to depict this inter-relation. So, we can use useReducer() when we are dealing with the states of objects instead of primitives.
 4. const [state, stateFn] = useState(). Whenever we use stateFn(value) to update the value of the state, it reloads the whole component for which it is getting fired.
 5. If we need an object in multiple components then instead of passing it via props we use useContext().
+6. We can use multiple useEffect() functions inside a component.
 
 ## Resources
 
