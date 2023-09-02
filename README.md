@@ -23,3 +23,7 @@ Learning react
 ## Resources
 
 1. https://feature-sliced.design/docs/get-started/overview
+
+## Progress
+
+334 / 537
