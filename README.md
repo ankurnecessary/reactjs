@@ -24,6 +24,11 @@ Learning react
 
 1. https://feature-sliced.design/docs/get-started/overview
 
+## Learnables
+
+1. Javascript Fetch API
+2. Response API
+
 ## Progress
 
 320 + 25 / 537
