@@ -13,7 +13,7 @@ export const eventsLoader = async () => {
   const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
-    //... Will configure in next lecture
+    throw new Error('Could not fetch events');
   } else {
     return response;
   }
