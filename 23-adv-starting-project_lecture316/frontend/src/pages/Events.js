@@ -9,7 +9,7 @@ function EventsPage() {
 
 export default EventsPage;
 
-export const eventsLoader = async () => {
+export const loader = async () => {
   const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
