@@ -44,9 +44,16 @@ function App() {
           , element: <EventsRootLayout />
           , children: [
             { index: true, element: <EventsPage />, loader: eventsLoader }
-            , { path: ':eventId', element: <EventDetailPage />, loader: eventDetailLoader }
             , { path: 'new', element: <NewEventPage /> }
-            , { path: ':eventId/edit', element: <EditEventPage /> }
+            , {
+              path: ':eventId'
+              , id: 'event-detail'
+              , loader: eventDetailLoader
+              , children: [
+                { index: true, element: <EventDetailPage /> }
+                , { path: 'edit', element: <EditEventPage /> }
+              ]
+            }
           ]
         }
       ]
