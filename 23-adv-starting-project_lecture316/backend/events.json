@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Aman","image":"https://images.inc.com/uploaded_files/image/1920x1080/getty_479977238_253066.jpg","date":"2024-12-12","description":"dsfsf","id":"64dc49e2-303c-45a2-9a54-6a677f609a29"},{"title":"test1","image":"https://images.inc.com/uploaded_files/image/1920x1080/getty_479977238_253066.jpg","date":"2023-09-14","description":"fsdf","id":"b291555c-7426-431c-93b5-e6fa1dee8edf"},{"title":"test","image":"https://images.inc.com/uploaded_files/image/1920x1080/getty_479977238_253066.jpg","date":"2023-09-08","description":"sfsdf","id":"ec90beb5-b5ca-4a97-9182-1cb9870ea2a5"},{"title":"test","image":"https://images.inc.com/uploaded_files/image/1920x1080/getty_479977238_253066.jpg","date":"2023-09-29","description":"test","id":"477c8382-8eec-4a39-87c7-bc3035ae1ee3"},{"title":"test","image":"https://images.inc.com/uploaded_files/image/1920x1080/getty_479977238_253066.jpg","date":"2023-09-14","description":"test","id":"f677f648-36cd-4040-b3f2-02717fbd69ce"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
