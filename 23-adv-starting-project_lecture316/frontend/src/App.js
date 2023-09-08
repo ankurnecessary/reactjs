@@ -33,6 +33,7 @@ import RootLayout from './pages/Root';
 import EventsRootLayout from './pages/EventsRoot';
 import ErrorPage from './pages/Error';
 import { action as eventFormAction } from './components/EventForm';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
             , { path: 'new', element: <NewEventPage />, action: eventFormAction }
           ]
         }
+        , { path: 'newsletter', element: <NewsletterPage />, action: newsletterAction }
       ]
     }
   ]);
