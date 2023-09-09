@@ -59,8 +59,8 @@ const loadEvents = async () => {
 export const loader = async ({ request, params }) => {
   const id = params.eventId;
   return defer({
-    events: await loadEvents()
-    , event: loadEvent(id)
+    events: loadEvents()
+    , event: await loadEvent(id)
   });
 };
 
