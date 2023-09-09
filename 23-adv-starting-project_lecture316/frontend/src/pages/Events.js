@@ -24,7 +24,7 @@ const loadEvents = async () => {
     // throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
     //   status: 500
     // });
-    json(
+    throw json(
       { message: 'Could not fetch events.' }
       , { status: 500 }
     )
