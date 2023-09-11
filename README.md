@@ -48,6 +48,8 @@ Learning react
 
 1. Javascript Fetch API
 2. Response API
+3. Interceptors in React
+4. Lazy loading in React
 
 ## Progress
 
