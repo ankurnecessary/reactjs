@@ -9,7 +9,7 @@ import {
 
 import EventItem from '../components/EventItem';
 import EventsList from '../components/EventsList';
-import { getAuthorizationToken } from '../utils/utilities';
+import { getAuthorizationToken } from '../utils/auth';
 
 function EventDetailPage() {
   const { event, events } = useRouteLoaderData('event-detail');

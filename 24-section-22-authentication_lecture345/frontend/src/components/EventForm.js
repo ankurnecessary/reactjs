@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 import classes from './EventForm.module.css';
-import { getAuthorizationToken } from '../utils/utilities';
+import { getAuthorizationToken } from '../utils/auth';
 
 function EventForm({ method, event }) {
   const data = useActionData();
