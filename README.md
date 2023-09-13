@@ -49,7 +49,8 @@ Learning react
 1. Javascript Fetch API
 2. Response API
 3. Interceptors in React
-4. Lazy loading in React
+4. Lazy loading in React for single route DONE
+5. Lazy loading in React for a group of pages.
 
 ## Progress
 
