@@ -63,5 +63,11 @@ function insertAtTheBeginning<T>(array: T[], value: T) {
 
 const demoArray = [1, 2, 3];
 
-const updatedArray = insertAtTheBeginning(demoArray, -1); // [-1, 1, 2, 3]
-const stringArray = insertAtTheBeginning(['a'], 'd');
+const updatedArray = insertAtTheBeginning(demoArray, -1); // INFERRED by typescript
+const updatedArray1 = insertAtTheBeginning<number>(demoArray, -1);
+
+const stringArray = insertAtTheBeginning(['a'], 'd'); // INFERRED by typescript
+const stringArray1 = insertAtTheBeginning<string>(['a'], 'd');
+
+const mixedArray = insertAtTheBeginning(['a', 1], 'b'); // INFERRED by typescript
+const mixedArray1 = insertAtTheBeginning<string | number>(['a', 1], 'b');
