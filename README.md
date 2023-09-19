@@ -52,6 +52,12 @@ Learning react
 4. Lazy loading in React for single route DONE
 5. Lazy loading in React for a group of pages.
 
+## Component libraries
+
+1. Components - https://github.com/grommet/grommet/tree/master
+2. React spinners - https://github.com/davidhu2000/react-spinners
+3. Components - https://github.com/react-bootstrap/react-bootstrap
+
 ## Progress
 
-347 + 25 / 537
+359 + 25 / 537
