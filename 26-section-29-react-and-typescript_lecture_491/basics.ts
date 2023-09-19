@@ -33,3 +33,9 @@ let people: { name: string, age: number }[];
 
 let course = "Course1"; // course variable will be automatically inferred as of type string
 // course = 1;// that is why getting compilation error when assigning a number to it
+
+// Union types
+
+let courseName: string | number = 'Course1';
+courseName = 1;
+
