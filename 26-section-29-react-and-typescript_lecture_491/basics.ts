@@ -51,3 +51,17 @@ function add(a: number, b: number): number {
 function printout(a: any): void {
   console.log(a);
 }
+
+
+// Generics
+
+// function insertAtTheBeginning(array: any[], value: any) {
+function insertAtTheBeginning<T>(array: T[], value: T) {
+  const newArray = [value, ...array];
+  return newArray;
+}
+
+const demoArray = [1, 2, 3];
+
+const updatedArray = insertAtTheBeginning(demoArray, -1); // [-1, 1, 2, 3]
+const stringArray = insertAtTheBeginning(['a'], 'd');
