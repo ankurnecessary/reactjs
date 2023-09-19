@@ -41,3 +41,13 @@ let course = "Course1"; // course variable will be automatically inferred as of 
 let courseName: string | number = 'Course1';
 courseName = 1;
 
+
+// Function and types
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+function printout(a: any): void {
+  console.log(a);
+}
