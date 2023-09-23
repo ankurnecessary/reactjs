@@ -57,7 +57,8 @@ Learning react
 1. Components - https://github.com/grommet/grommet/tree/master
 2. React spinners - https://github.com/davidhu2000/react-spinners
 3. Components - https://github.com/react-bootstrap/react-bootstrap
+4. Tanstack query
 
 ## Progress
 
-370 + 25 / 537
+382 + 25 / 537
