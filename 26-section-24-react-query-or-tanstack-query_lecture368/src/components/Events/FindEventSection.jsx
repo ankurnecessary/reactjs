@@ -16,7 +16,7 @@ export default function FindEventSection() {
         search: searchTerm,
       },
     ],
-    queryFn: () => fetchEvents(searchTerm),
+    queryFn: ({ signal }) => fetchEvents({ signal, searchTerm }),
   });
 
   function handleSubmit(event) {
