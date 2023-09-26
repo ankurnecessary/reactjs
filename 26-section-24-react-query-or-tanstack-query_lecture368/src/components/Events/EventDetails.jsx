@@ -12,7 +12,7 @@ export default function EventDetails() {
   const eventId = params.id;
 
   const { data, isPending, isError, error } = useQuery({
-    queryKey: ["event"],
+    queryKey: ["events", eventId],
     queryFn: ({ signal }) => fetchEvent({ id: eventId, signal }),
   });
 
@@ -36,36 +36,55 @@ export default function EventDetails() {
           View all Events
         </Link>
       </Header>
-      {isPending && <p>Loading...</p>}
-      {isError && (
-        <ErrorBlock
-          title="Error occurred"
-          message={error.info?.message || "Please try again after sometime"}
-        />
-      )}
-      {data && (
-        <article id="event-details">
-          <header>
-            <h1>{data.title}</h1>
-            <nav>
-              <button onClick={deleteHandler}>Delete</button>
-              <Link to="edit">Edit</Link>
-            </nav>
-          </header>
-          <div id="event-details-content">
-            <img src={`http://localhost:3000/${data.image}`} alt="" />
-            <div id="event-details-info">
-              <div>
-                <p id="event-details-location">{data.location}</p>
-                <time dateTime={`Todo-DateT$Todo-Time`}>
-                  {data.date} @ {data.time}
-                </time>
-              </div>
-              <p id="event-details-description">{data.description}</p>
-            </div>
+      <article id="event-details">
+        {isPending && (
+          <div id="event-details-content" className="center">
+            <p>Fetching event data...</p>
           </div>
-        </article>
-      )}
+        )}
+        {isError && (
+          <div id="event-details-content" className="center">
+            <ErrorBlock
+              title="Failed to load event"
+              message={
+                error.info?.message ||
+                "Failed to fetch event data.Please try again later."
+              }
+            />
+          </div>
+        )}
+        {data && (
+          <>
+            <header>
+              <h1>{data.title}</h1>
+              <nav>
+                <button onClick={deleteHandler}>Delete</button>
+                <Link to="edit">Edit</Link>
+              </nav>
+            </header>
+            <div id="event-details-content">
+              <img
+                src={`http://localhost:3000/${data.image}`}
+                alt={data.title}
+              />
+              <div id="event-details-info">
+                <div>
+                  <p id="event-details-location">{data.location}</p>
+                  <time dateTime={`Todo-DateT$Todo-Time`}>
+                    {new Date(data.date).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}{" "}
+                    @ {data.time}
+                  </time>
+                </div>
+                <p id="event-details-description">{data.description}</p>
+              </div>
+            </div>
+          </>
+        )}
+      </article>
     </>
   );
 }
