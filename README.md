@@ -61,4 +61,4 @@ Learning react
 
 ## Progress
 
-382 + 25 / 537
+393 + 25 / 537 = 77.83
